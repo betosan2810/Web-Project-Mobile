@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block register %}
+ <!-- Bootstrap 5 Contact Form Snippet -->
+
+<div class="container-fluid px-5 my-5">
+              <div class="text-center">
+                <div class="h3 fw-light custom-heading">Contact Form</div>
+                <p class="mb-4 text-muted custom-text">Split layout contact form</p>
+              
+              
+
+              <!-- * * * * * * * * * * * * * *
+          // * * SB Forms Contact Form * *
+          // * * * * * * * * * * * * * * *
+
+          // This form is pre-integrated with SB Forms.
+          // To make this form functional, sign up at
+          // https://startbootstrap.com/solution/contact-forms
+          // to get an API token!
+          -->
+          <hr>
+          <form  method= 'post' action=''>
+            {% csrf_token %}
+
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example1cg">Your Name</label>
+              
+              {{cf.name}}
+            </div>
+
+            <div class="form-outline mb-4">
+              
+              <label class="form-label" for="form3Example3cg">Your Email</label>
+              
+              {{cf.email}}
+            </div>
+            <div class="form-outline mb-4">
+              
+                <label class="form-label" for="form3Example3cg">Message</label>
+                
+                {{cf.message}}
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit"
+                  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+              </div>
+            </form>
+        </div>
+    </div>
+              
+            
+
+           
+
+ {% endblock register %}

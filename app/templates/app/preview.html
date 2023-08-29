@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang Web Bán Điện Thoại</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .intro {
+    text-align: center;
+    padding: 2rem;
+  }
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .intro p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  .product-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .product-link:hover {
+    background-color: #555;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Chào mừng đến với Trang Web Bán Điện Thoại</h1>
+    <p>Hãy khám phá danh mục sản phẩm đa dạng của chúng tôi</p>
+  </header>
+  <div class="intro">
+    <h1>Danh Mục Sản Phẩm</h1>
+    <p>Chào mừng bạn đến với cửa hàng trực tuyến của chúng tôi, nơi bạn có thể tìm thấy những điện thoại di động hàng đầu từ các thương hiệu uy tín. Với một loạt các tính năng và mẫu mã đa dạng, chúng tôi tự tin rằng bạn sẽ tìm thấy sản phẩm phù hợp với nhu cầu của mình.</p>
+    <p>Tất cả các sản phẩm đều được kiểm tra chất lượng đảm bảo và đều đi kèm với những ưu đãi hấp dẫn. Hãy cùng chúng tôi khám phá và lựa chọn cho mình một chiếc điện thoại thông minh hoàn hảo!</p>
+    <a href="{% url 'home' %}" class="product-link">Xem Sản Phẩm</a>
+  </div>
+  <section id="products">
+    <!-- Danh sách sản phẩm có thể được thêm vào đây -->
+  </section>
+</body>
+</html>
