@@ -86,6 +86,8 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Đăng ký thành công!')
+            return redirect('register')
     context={'form': form}
     return render(request,'app/register.html',context)
 def loginPage(request):
@@ -164,7 +166,8 @@ def contact(request):
         cf = ContactForm(request.POST)
         if cf.is_valid():
             cf.save()
-            return redirect('contact:contact')  # Redirect to a success page
+            messages.success(request, 'Gửi biểu mẫu thành công')
+            return redirect('contact')  # Redirect to a success page
     else:
         cf = ContactForm()
     return render(request, 'app/contact.html', {'cf': cf})

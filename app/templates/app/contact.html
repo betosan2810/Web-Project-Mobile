@@ -1,8 +1,14 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block register %}
+{% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-success" role="alert">
+        {{ message }}
+      </div>
+    {% endfor %}
+{% endif %}
  <!-- Bootstrap 5 Contact Form Snippet -->
-
 <div class="container-fluid px-5 my-5">
               <div class="text-center">
                 <div class="h3 fw-light custom-heading">Contact Form</div>
@@ -46,11 +52,6 @@
                   class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
               </div>
             </form>
-        </div>
-    </div>
-              
-            
-
-           
-
+      </div>
+</div>
  {% endblock register %}
