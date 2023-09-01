@@ -135,8 +135,8 @@ background-color: #007bff;
 color: rgb(241, 238, 238);
 }
 /* CSS for responsive banner images */
-.carousel-inner .carousel-item img {
-    width: 100%;
+/* .carousel-inner .carousel-item img {
+    width: 70%;
     height: auto;
 }
 /* Adjust banner image size for smaller screens */
@@ -145,6 +145,6 @@ color: rgb(241, 238, 238);
         width: 100%;
         height: auto;
     }
-}
+} 
 
 
