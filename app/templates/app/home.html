@@ -49,7 +49,14 @@
       <div class="box-element product">
        <h6><strong>{{product.name}}</strong></h6>
        <hr>
-       <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+       {% if request.user.is_authenticated %}
+    <!-- Hiển thị nút "Add to Cart" bình thường -->
+         <button data-product="{{ product.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+       {% else %}
+    <!-- Nếu chưa đăng nhập, hiển thị liên kết đến trang đăng kí -->
+         <a href="{% url 'register' %}" class="btn btn-outline-secondary">Add to cart</a>
+       {% endif %}
+
        <a class="btn btn-outline-success" href="{% url 'detail' %}?id={{product.id}}">View</a>
        <h3 style="display: inline-block; float: right"><strong>${{product.price | floatformat:2 }}</strong></h3>
       </div>
@@ -99,7 +106,7 @@
 
           <div class="mt-4">
             <!-- Facebook -->
-            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <a type="button" class="btn btn-floating btn-warning btn-lg" href="https://www.facebook.com/profile.php?id=100048379584382"><i class="fab fa-facebook-f"></i></a>
             <!-- Dribbble -->
             <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
             <!-- Twitter -->
@@ -118,7 +125,7 @@
           <form class="d-flex" role="search" method= "POST" action = "{% url 'search' %}">
             {% csrf_token %}
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name = "searched">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
           </form>
 
           <ul class="fa-ul" style="margin-left: 1.65em;">
